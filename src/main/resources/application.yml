@@ -1,0 +1,29 @@
+server:
+  port: 8080
+spring:
+  application.name: demo
+  jpa:
+    hibernate.ddl-auto: none
+    show-sql: true
+    hibernate.naming.physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate.jdbc.time_zone: UTC
+      hibernate.dialect: org.hibernate.dialect.MySQL8Dialect
+      hibernate.show_sql: true
+      hibernate.format_sql: true
+      hibernate.type: trace
+      hibernate.generate_statistics: false
+      hibernate.order_inserts: true
+      hibernate.order_updates: true
+  datasource:
+    name: 'member'
+    driver-class-name: software.aws.rds.jdbc.mysql.Driver
+    jdbc-url: 'jdbc:mysql:aws://localhost:3316/member?allowPublicKeyRetrieval=true'
+    url: 'jdbc:mysql:aws://localhost:3316/member?allowPublicKeyRetrieval=true'
+    username: 'member'
+    password: 'testpwd'
+
+logging:
+  level:
+    org.springframework: INFO
+    com.example: DEBUG
